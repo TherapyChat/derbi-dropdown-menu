@@ -1,9 +1,10 @@
 {
-  "name": "paper-dropdown-menu",
+  "name": "derbi-dropdown-menu",
   "version": "2.1.0",
   "description": "An element that works similarly to a native browser select",
   "authors": [
-    "The Polymer Authors"
+    "The Polymer Authors",
+    "Alberto Fernandez <albertofdzm@gmail.com>"
   ],
   "keywords": [
     "web-components",
@@ -12,14 +13,14 @@
     "dropdown",
     "select"
   ],
-  "main": ["paper-dropdown-menu.html", "paper-dropdown-menu-light.html"],
+  "main": ["derbi-dropdown-menu.html", "derbi-dropdown-menu-light.html"],
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/PolymerElements/paper-dropdown-menu.git"
+    "url": "git://github.com/TherapyChat/derbi-dropdown-menu.git"
   },
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/PolymerElements/paper-dropdown-menu",
+  "homepage": "https://github.com/TherapyChat/derbi-dropdown-menu",
   "dependencies": {
     "polymer": "Polymer/polymer#1.9 - 2",
     "iron-a11y-keys-behavior": "PolymerElements/iron-a11y-keys-behavior#1 - 2",

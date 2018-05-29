@@ -5,7 +5,7 @@
  *   https://github.com/Polymer/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   paper-dropdown-menu-icons.html
+ *   derbi-dropdown-menu-icons.html
  */
 
 /// <reference path="../iron-iconset-svg/iron-iconset-svg.d.ts" />

@@ -5,7 +5,7 @@
  *   https://github.com/Polymer/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   paper-dropdown-menu-light.html
+ *   derbi-dropdown-menu-light.html
  */
 
 /// <reference path="../polymer/types/polymer.d.ts" />
@@ -18,33 +18,33 @@
 /// <reference path="../paper-behaviors/paper-ripple-behavior.d.ts" />
 /// <reference path="../paper-menu-button/paper-menu-button.d.ts" />
 /// <reference path="../paper-styles/default-theme.d.ts" />
-/// <reference path="paper-dropdown-menu-icons.d.ts" />
-/// <reference path="paper-dropdown-menu-shared-styles.d.ts" />
+/// <reference path="derbi-dropdown-menu-icons.d.ts" />
+/// <reference path="derbi-dropdown-menu-shared-styles.d.ts" />
 
 /**
  * Material design: [Dropdown menus](https://www.google.com/design/spec/components/buttons.html#buttons-dropdown-buttons)
  *
- * This is a faster, lighter version of `paper-dropdown-menu`, that does not
+ * This is a faster, lighter version of `derbi-dropdown-menu`, that does not
  * use a `<paper-input>` internally. Use this element if you're concerned about
  * the performance of this element, i.e., if you plan on using many dropdowns on
  * the same page. Note that this element has a slightly different styling API
- * than `paper-dropdown-menu`.
+ * than `derbi-dropdown-menu`.
  *
- * `paper-dropdown-menu-light` is similar to a native browser select element.
- * `paper-dropdown-menu-light` works with selectable content. The currently selected
+ * `derbi-dropdown-menu-light` is similar to a native browser select element.
+ * `derbi-dropdown-menu-light` works with selectable content. The currently selected
  * item is displayed in the control. If no item is selected, the `label` is
  * displayed instead.
  *
  * Example:
  *
- *     <paper-dropdown-menu-light label="Your favourite pastry">
+ *     <derbi-dropdown-menu-light label="Your favourite pastry">
  *       <paper-listbox slot="dropdown-content">
  *         <paper-item>Croissant</paper-item>
  *         <paper-item>Donut</paper-item>
  *         <paper-item>Financier</paper-item>
  *         <paper-item>Madeleine</paper-item>
  *       </paper-listbox>
- *     </paper-dropdown-menu-light>
+ *     </derbi-dropdown-menu-light>
  *
  * This example renders a dropdown menu with 4 options.
  *
@@ -67,24 +67,24 @@
  *
  * Custom property | Description | Default
  * ----------------|-------------|----------
- * `--paper-dropdown-menu` | A mixin that is applied to the element host | `{}`
- * `--paper-dropdown-menu-disabled` | A mixin that is applied to the element host when disabled | `{}`
- * `--paper-dropdown-menu-ripple` | A mixin that is applied to the internal ripple | `{}`
- * `--paper-dropdown-menu-button` | A mixin that is applied to the internal menu button | `{}`
- * `--paper-dropdown-menu-icon` | A mixin that is applied to the internal icon | `{}`
- * `--paper-dropdown-menu-disabled-opacity` | The opacity of the dropdown when disabled  | `0.33`
- * `--paper-dropdown-menu-color` | The color of the input/label/underline when the dropdown is unfocused | `--primary-text-color`
- * `--paper-dropdown-menu-focus-color` | The color of the label/underline when the dropdown is focused  | `--primary-color`
+ * `--derbi-dropdown-menu` | A mixin that is applied to the element host | `{}`
+ * `--derbi-dropdown-menu-disabled` | A mixin that is applied to the element host when disabled | `{}`
+ * `--derbi-dropdown-menu-ripple` | A mixin that is applied to the internal ripple | `{}`
+ * `--derbi-dropdown-menu-button` | A mixin that is applied to the internal menu button | `{}`
+ * `--derbi-dropdown-menu-icon` | A mixin that is applied to the internal icon | `{}`
+ * `--derbi-dropdown-menu-disabled-opacity` | The opacity of the dropdown when disabled  | `0.33`
+ * `--derbi-dropdown-menu-color` | The color of the input/label/underline when the dropdown is unfocused | `--primary-text-color`
+ * `--derbi-dropdown-menu-focus-color` | The color of the label/underline when the dropdown is focused  | `--primary-color`
  * `--paper-dropdown-error-color` | The color of the label/underline when the dropdown is invalid  | `--error-color`
- * `--paper-dropdown-menu-label` | Mixin applied to the label | `{}`
- * `--paper-dropdown-menu-input` | Mixin appled to the input | `{}`
+ * `--derbi-dropdown-menu-label` | Mixin applied to the label | `{}`
+ * `--derbi-dropdown-menu-input` | Mixin appled to the input | `{}`
  *
  * Note that in this element, the underline is just the bottom border of the "input".
  * To style it:
  *
  *     <style is=custom-style>
- *       paper-dropdown-menu-light.custom {
- *         --paper-dropdown-menu-input: {
+ *       derbi-dropdown-menu-light.custom {
+ *         --derbi-dropdown-menu-input: {
  *           border-bottom: 2px dashed lavender;
  *         };
  *     </style>
@@ -245,5 +245,5 @@ interface PaperDropdownMenuLightElement extends Polymer.Element, Polymer.IronBut
 }
 
 interface HTMLElementTagNameMap {
-  "paper-dropdown-menu-light": PaperDropdownMenuLightElement;
+  "derbi-dropdown-menu-light": PaperDropdownMenuLightElement;
 }

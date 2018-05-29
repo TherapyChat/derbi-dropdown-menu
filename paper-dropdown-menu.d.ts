@@ -5,7 +5,7 @@
  *   https://github.com/Polymer/gen-typescript-declarations
  *
  * To modify these typings, edit the source file(s):
- *   paper-dropdown-menu.html
+ *   derbi-dropdown-menu.html
  */
 
 /// <reference path="../polymer/types/polymer.d.ts" />
@@ -19,27 +19,27 @@
 /// <reference path="../paper-menu-button/paper-menu-button.d.ts" />
 /// <reference path="../paper-ripple/paper-ripple.d.ts" />
 /// <reference path="../paper-styles/default-theme.d.ts" />
-/// <reference path="paper-dropdown-menu-icons.d.ts" />
-/// <reference path="paper-dropdown-menu-shared-styles.d.ts" />
+/// <reference path="derbi-dropdown-menu-icons.d.ts" />
+/// <reference path="derbi-dropdown-menu-shared-styles.d.ts" />
 
 /**
  * Material design: [Dropdown menus](https://www.google.com/design/spec/components/buttons.html#buttons-dropdown-buttons)
  *
- * `paper-dropdown-menu` is similar to a native browser select element.
- * `paper-dropdown-menu` works with selectable content. The currently selected
+ * `derbi-dropdown-menu` is similar to a native browser select element.
+ * `derbi-dropdown-menu` works with selectable content. The currently selected
  * item is displayed in the control. If no item is selected, the `label` is
  * displayed instead.
  *
  * Example:
  *
- *     <paper-dropdown-menu label="Your favourite pastry">
+ *     <derbi-dropdown-menu label="Your favourite pastry">
  *       <paper-listbox slot="dropdown-content">
  *         <paper-item>Croissant</paper-item>
  *         <paper-item>Donut</paper-item>
  *         <paper-item>Financier</paper-item>
  *         <paper-item>Madeleine</paper-item>
  *       </paper-listbox>
- *     </paper-dropdown-menu>
+ *     </derbi-dropdown-menu>
  *
  * This example renders a dropdown menu with 4 options.
  *
@@ -62,12 +62,12 @@
  *
  * Custom property | Description | Default
  * ----------------|-------------|----------
- * `--paper-dropdown-menu` | A mixin that is applied to the element host | `{}`
- * `--paper-dropdown-menu-disabled` | A mixin that is applied to the element host when disabled | `{}`
- * `--paper-dropdown-menu-ripple` | A mixin that is applied to the internal ripple | `{}`
- * `--paper-dropdown-menu-button` | A mixin that is applied to the internal menu button | `{}`
- * `--paper-dropdown-menu-input` | A mixin that is applied to the internal paper input | `{}`
- * `--paper-dropdown-menu-icon` | A mixin that is applied to the internal icon | `{}`
+ * `--derbi-dropdown-menu` | A mixin that is applied to the element host | `{}`
+ * `--derbi-dropdown-menu-disabled` | A mixin that is applied to the element host when disabled | `{}`
+ * `--derbi-dropdown-menu-ripple` | A mixin that is applied to the internal ripple | `{}`
+ * `--derbi-dropdown-menu-button` | A mixin that is applied to the internal menu button | `{}`
+ * `--derbi-dropdown-menu-input` | A mixin that is applied to the internal paper input | `{}`
+ * `--derbi-dropdown-menu-icon` | A mixin that is applied to the internal icon | `{}`
  *
  * You can also use any of the `paper-input-container` and `paper-menu-button`
  * style mixins and custom properties to style the internal input and menu button
@@ -244,5 +244,5 @@ interface PaperDropdownMenuElement extends Polymer.Element, Polymer.IronButtonSt
 }
 
 interface HTMLElementTagNameMap {
-  "paper-dropdown-menu": PaperDropdownMenuElement;
+  "derbi-dropdown-menu": PaperDropdownMenuElement;
 }

@@ -11,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>paper-dropdown-menu-light basic tests</title>
+  <title>derbi-dropdown-menu-light basic tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
@@ -20,41 +20,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="import" href="../../paper-listbox/paper-listbox.html">
   <link rel="import" href="../../paper-item/paper-item.html">
-  <link rel="import" href="../paper-dropdown-menu-light.html">
+  <link rel="import" href="../derbi-dropdown-menu-light.html">
 </head>
 <body>
 
   <test-fixture id="TrivialDropdownMenu">
     <template>
-      <paper-dropdown-menu-light no-animations>
+      <derbi-dropdown-menu-light no-animations>
         <paper-listbox slot="dropdown-content" class="dropdown-content">
           <paper-item>Foo</paper-item>
           <paper-item>Bar</paper-item>
         </paper-listbox>
-      </paper-dropdown-menu-light>
+      </derbi-dropdown-menu-light>
     </template>
   </test-fixture>
 
   <test-fixture id="PreselectedDropdownMenu">
     <template>
-      <paper-dropdown-menu-light no-animations>
+      <derbi-dropdown-menu-light no-animations>
         <paper-listbox slot="dropdown-content" class="dropdown-content" selected="1">
           <paper-item>Foo</paper-item>
           <paper-item>Bar</paper-item>
         </paper-listbox>
-      </paper-dropdown-menu-light>
+      </derbi-dropdown-menu-light>
     </template>
   </test-fixture>
 
   <test-fixture id="LabelsDropdownMenu">
     <template>
-      <paper-dropdown-menu-light no-animations>
+      <derbi-dropdown-menu-light no-animations>
         <paper-listbox slot="dropdown-content" class="dropdown-content">
           <paper-item label="Foo label property">Foo textContent</paper-item>
           <paper-item label="Foo label attribute">Foo textContent</paper-item>
           <paper-item>Foo textContent</paper-item>
         </paper-listbox>
-      </paper-dropdown-menu-light>
+      </derbi-dropdown-menu-light>
     </template>
   </test-fixture>
 
@@ -67,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       MockInteractions.tap(dropdownMenu);
     }
 
-    suite('<paper-dropdown-menu-light>', function() {
+    suite('<derbi-dropdown-menu-light>', function() {
       var dropdownMenu;
       var content;
 

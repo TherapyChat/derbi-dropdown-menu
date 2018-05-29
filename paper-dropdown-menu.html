@@ -20,27 +20,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../paper-ripple/paper-ripple.html">
 <link rel="import" href="../paper-styles/default-theme.html">
 
-<link rel="import" href="paper-dropdown-menu-icons.html">
-<link rel="import" href="paper-dropdown-menu-shared-styles.html">
+<link rel="import" href="derbi-dropdown-menu-icons.html">
+<link rel="import" href="derbi-dropdown-menu-shared-styles.html">
 
 <!--
 Material design: [Dropdown menus](https://www.google.com/design/spec/components/buttons.html#buttons-dropdown-buttons)
 
-`paper-dropdown-menu` is similar to a native browser select element.
-`paper-dropdown-menu` works with selectable content. The currently selected
+`derbi-dropdown-menu` is similar to a native browser select element.
+`derbi-dropdown-menu` works with selectable content. The currently selected
 item is displayed in the control. If no item is selected, the `label` is
 displayed instead.
 
 Example:
 
-    <paper-dropdown-menu label="Your favourite pastry">
+    <derbi-dropdown-menu label="Your favourite pastry">
       <paper-listbox slot="dropdown-content">
         <paper-item>Croissant</paper-item>
         <paper-item>Donut</paper-item>
         <paper-item>Financier</paper-item>
         <paper-item>Madeleine</paper-item>
       </paper-listbox>
-    </paper-dropdown-menu>
+    </derbi-dropdown-menu>
 
 This example renders a dropdown menu with 4 options.
 
@@ -63,26 +63,26 @@ The following custom properties and mixins are also available for styling:
 
 Custom property | Description | Default
 ----------------|-------------|----------
-`--paper-dropdown-menu` | A mixin that is applied to the element host | `{}`
-`--paper-dropdown-menu-disabled` | A mixin that is applied to the element host when disabled | `{}`
-`--paper-dropdown-menu-ripple` | A mixin that is applied to the internal ripple | `{}`
-`--paper-dropdown-menu-button` | A mixin that is applied to the internal menu button | `{}`
-`--paper-dropdown-menu-input` | A mixin that is applied to the internal paper input | `{}`
-`--paper-dropdown-menu-icon` | A mixin that is applied to the internal icon | `{}`
+`--derbi-dropdown-menu` | A mixin that is applied to the element host | `{}`
+`--derbi-dropdown-menu-disabled` | A mixin that is applied to the element host when disabled | `{}`
+`--derbi-dropdown-menu-ripple` | A mixin that is applied to the internal ripple | `{}`
+`--derbi-dropdown-menu-button` | A mixin that is applied to the internal menu button | `{}`
+`--derbi-dropdown-menu-input` | A mixin that is applied to the internal paper input | `{}`
+`--derbi-dropdown-menu-icon` | A mixin that is applied to the internal icon | `{}`
 
 You can also use any of the `paper-input-container` and `paper-menu-button`
 style mixins and custom properties to style the internal input and menu button
 respectively.
 
 @group Paper Elements
-@element paper-dropdown-menu
+@element derbi-dropdown-menu
 @hero hero.svg
 @demo demo/index.html
 -->
 
-<dom-module id="paper-dropdown-menu">
+<dom-module id="derbi-dropdown-menu">
   <template>
-    <style include="paper-dropdown-menu-shared-styles"></style>
+    <style include="derbi-dropdown-menu-shared-styles"></style>
 
     <!-- this div fulfills an a11y requirement for combobox, do not remove -->
     <span role="button"></span>
@@ -116,7 +116,7 @@ respectively.
           no-label-float="[[noLabelFloat]]"
           label="[[label]]">
           <!-- support hybrid mode: user might be using paper-input 1.x which distributes via <content> -->
-          <iron-icon icon="paper-dropdown-menu:arrow-drop-down" suffix slot="suffix"></iron-icon>
+          <iron-icon icon="derbi-dropdown-menu:arrow-drop-down" suffix slot="suffix"></iron-icon>
         </paper-input>
       </div>
       <slot id="content" name="dropdown-content" slot="dropdown-content"></slot>
@@ -125,7 +125,7 @@ respectively.
 
   <script>
     Polymer({
-      is: 'paper-dropdown-menu',
+      is: 'derbi-dropdown-menu',
 
       behaviors: [
         Polymer.IronButtonState,
