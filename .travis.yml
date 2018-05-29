@@ -1,32 +1,25 @@
 language: node_js
 sudo: required
 before_script:
-  - npm install -g polymer-cli
-  - polymer install --variants
-  - >-
-    npm run update-types && git diff --exit-code || (echo -e
-    '\n\033[31mERROR:\033[0m Typings are stale. Please run "npm run
-    update-types".' && false)
-  - >-
-    npm run format && git diff --exit-code || (echo -e '\n\033[31mERROR:\033[0m
-    Project is not formatted. Please run "npm run format".' && false)
-env:
-  global:
-    - secure: >-
-        wtzQz1xvw2c7t6EIf+64Nf5uIv6Buc8j78bFIcStT97Tq1MHvhTrY8AKvF/vQyD+CR8t0rVf+Og5Np1yxVM8SmTMG+2uaafNoU7Vh6x2owcYeR1ftryG7wp2+PlPyE4yrVW/gULb7jgjilTnUaa3k52zOTePr1VmU23E8XKs37csTmoke917E092MN4yQYJLDyBQNKmfTwiWQb11YyhR+XbwEkgnvUMPO2ArVubzcmIIOrZ5y82tmodxgsCBWQ05KJUDR7NbskUTrkXdzWTMe0yypwVm9rc3dX+z85M9zHCQqPf/XB65qYrLg4+uJeyRr3IZKUYrxH+9UL0PyyEYj0XL+oWBj9xdZu6mxX2YuzVBJnt/qKzUr3hCVJDMmgUkfALeKZ8xtaGQHTtzLLkKw8UZKY+npiEvWHaLjzg4qRaR+vs2+XkC7ELD5+A4kxSwUvIhS8ql8mnpOdV4bkw+REtl1xa+5+pzwpItiNOSrzHT1DCtYt8Ci2GaM6VytMPbLcFkxVMlvKzI/mtwjgLFPfCcbQ8UFDRijFsjjnmLcAI0R2VBBUKihUTDeetxC4EuLxSm5GuL7QXsLmXzI/VILY/MwGbMEXOMQqqlPzCPKBy6J4JzOBUEBEgNkLXXiLNwGhmiSm7o2j3JWNnLrocUrENkNjnTjwkUfLrPp4H0VpA=
-    - secure: >-
-        BJgAfJkK2TPh6WsvYVhs61wCcvamTABjbFfF2x/mBc4Kt/5LUSI8BCwPpsW7pKx0Qoc+qA2Tew4OAO5voWoMdX5ghj7xpFpYojiXolNWreLZ0PZZv7MTCnFu5d+Enh+1YH0Do1Y1Zfg6W4a60oI/VxCLtrBbVUZ7ilMlbzAGNl4OGDCLOpFkJyEWIfmUkiPgAv3/6ZdJKVfttiaSoBXzZGOcyG0KBIHT7Z/C6IOodjhCLqOhCGejjyHBeId9VWUwFfMsg3FkKMJpfY5g/7Yc2+1QWkL4VAeaOc0N6IcJLRChXF6QxMqPq7vQG7WlweVAuC1ojEM0rAtxnLGpKLuDTSMQvMiPgtQ5j5wLIt2X+QymlE9UFlDgW5lKT5MZxhMbkB1PQDgfuFzThM79uqt02N3XTiYBkn3XspLRbg9ZE/TR2YezipxyzEwLxTRfurWjV3S5PeGqNVAACrtc+npMKuBIMx2ULu+P8LB57J+mGbwpTvSa4TyFhJtKkRaSdJ2+q7oY+4dPAENc3WXof6+max60MFe9dg3P1DMeE/S4vjDzqdeHaF1SFmIZxh39OJ4MsKbvE3AeemTl25exJWJyOfGEfYMNz2WoDvGfkbU2kR2EJE2sUwTPmMwC0txGarXZ8tWlh1wcQHcdB3mgaPRIdnEx91PHHGmcihWdcjsxCCY=
+- npm install -g polymer-cli
+- polymer install --variants
+- npm run update-types && git diff --exit-code || (echo -e '\n\033[31mERROR:\033[0m
+  Typings are stale. Please run "npm run update-types".' && false)
+- npm run format && git diff --exit-code || (echo -e '\n\033[31mERROR:\033[0m Project
+  is not formatted. Please run "npm run format".' && false)
 node_js: stable
 addons:
   firefox: latest
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
+    - google-chrome-stable
+env:
+  global:
+  - secure: WZRSyljVXjeu/Wr4TZbrFP8Yj18MUQsma511ysx6G9Ia3FJg3srtZ/TPTqEUxIdqpEAAuPhxJuCJOFL5fFhZHpL+TLeyWJYPE3FpcDMp/BFM8rSDM0TKBbOTTKwZoZYML7ue0UjsxKf2o25voNigx7257d28gcv9zhiWsXEyPrkeLPbx3o/DS7cG9F0nhRT5JNiviaNZrguKcCSpRm6Nli+MOy/ZUSX/LFx7OYm/lSbV/5n4nKPdJ0YRFaUBrTr1KoInDTNEUA3IEp4DtDuhRDjRFZa82ZBKDFeuXg1GbCFk/+xWNnzYCnQCfY0cF05rHStsGzAKpWYI0f631n0GbjnDvMU33e6tzNZjaeAVevJADQVkTqkeCaJhOlt7rxX1mrrBm/zi9RROoJ1/Uo1Oclehcn4aPqb84raS3XtpOkV2MiRc5Ofm2y8ADP578O9J+yTtiDrlVxoTqwL9rGVzaLgr0Is9y8f6FgS2xjSv2E1uDtO0fARsO3ZrPametRI2sfI8dybknJvPWiF5FF2p5iyDb8FYBEUCimoE6OZRMSEVFtq/WkAzev2jbHiyVOaRMrXGkIZjuIirmOnzVUJKNILYmKm9BM8ncutOukPIKcv/dhFShlci5ZTsYEPgF++VS7d7GmES1tqMvutKVDlXC3sxAOh0prekXj5AIUCFMSM=
+  - secure: SNc/HPpacNLjjh7XR11hYRdcsmMRa9N3QaL54Y2MRfMs8BfxOiS5hw7j3qgNDIX4A0dgutnEBTXuR9P/kTGImRXr6PVH32bZUtCobJyqr4+/Os3WBuaBRNV+YGhVVbyLhTo0+zqpMvM+xTmEBuOqphzp3r0pSZNtvBvw3uKQaDCS1QSrSlAvdtsTSAsJEK8K46j7gPL6vco6F4wtapNXNfTKXpxRmRl52IH5Ef31qlU2eFUE+/eN/h7qsU7NzzXGE51INPjoMxfOoxyokO0uQP7hchB6+rkXw64g+92DddUWG/jKhsGDz5gZlcpg0JjEANCx3wbE9SXLax9//oyH1CKyTwKqHuVTj3KjTxzG1XZkrb8e7ZoMWGREHKM7Mz9YMgaVbrzH5S10dBIzfNVUq2N6FP/+dUPlWang5os209XKqJ9Jt7a+RvlZ+uEAWoMYntUtAwtvQi6DXNKO1kVmPQrza2XVIvt4M9B456+sifCLyvzKnD0ybAal6K30h1nfzLRL6vpy9wKo3yOX5CtDHTlpZN3MBTkh0LfR6Q4j/hbfvN4yyF/0cywkLvnsx0DyVCyzvAkCLRtPxiw4tZpJiuyk1MkXh9MO68dTwEOO3e/xIgem9mxPG+eDmxieIZktZ0mxQqcQwBBwFg4W4nOrz2Sqbk/8PI1nl9pFFU2Da4o=
 script:
-  - xvfb-run polymer test
-  - >-
-    if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then polymer test -s 'default';
-    fi
+- xvfb-run polymer test
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then polymer test -s 'default'; fi
 dist: trusty
