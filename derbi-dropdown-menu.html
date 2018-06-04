@@ -91,7 +91,7 @@ respectively.
       vertical-align="[[verticalAlign]]"
       horizontal-align="[[horizontalAlign]]"
       dynamic-align="[[dynamicAlign]]"
-      vertical-offset="[[_computeMenuVerticalOffset(noLabelFloat, verticalOffset)]]"
+      vertical-offset="[[_computeMenuVerticalOffset(verticalOffset)]]"
       disabled="[[disabled]]"
       no-animations="[[noAnimations]]"
       on-iron-select="_onIronSelect"
@@ -103,6 +103,7 @@ respectively.
       <!-- support hybrid mode: user might be using paper-menu-button 1.x which distributes via <content> -->
       <div class="dropdown-trigger" slot="dropdown-trigger">
         <paper-ripple></paper-ripple>
+        <label>[[label]]</label>
         <!-- paper-input has type="text" for a11y, do not remove -->
         <paper-input
           type="text"
@@ -112,15 +113,23 @@ respectively.
           value="[[value]]"
           placeholder="[[placeholder]]"
           error-message="[[errorMessage]]"
-          always-float-label="[[alwaysFloatLabel]]"
-          no-label-float="[[noLabelFloat]]"
-          label="[[label]]">
+          no-label-float
+        >
           <!-- support hybrid mode: user might be using paper-input 1.x which distributes via <content> -->
-          <iron-icon icon="derbi-dropdown-menu:arrow-drop-down" suffix slot="suffix"></iron-icon>
+          <iron-icon
+            hidden$="[[_computeHiddenArrowIcon(value)]]"
+            icon="[[iconArrowDropDown]]"
+            suffix
+            slot="suffix"
+          ></iron-icon>
         </paper-input>
       </div>
       <slot id="content" name="dropdown-content" slot="dropdown-content"></slot>
     </paper-menu-button>
+    <div class$="[[_computeUnderlineClass(focused,invalid)]]">
+      <div class="unfocused-line"></div>
+      <div class="focused-line"></div>
+    </div>
   </template>
 
   <script>
@@ -135,6 +144,10 @@ respectively.
       ],
 
       properties: {
+        iconArrowDropDown: {
+          type: String,
+          value: 'derbi-dropdown-menu:arrow-drop-down'
+        },
         /**
          * The derived "label" of the currently selected item. This value
          * is the `label` property on the selected item if set, or else the
@@ -189,18 +202,6 @@ respectively.
          * to the dropdown when it opens.
          */
         allowOutsideScroll: {type: Boolean, value: false},
-
-        /**
-         * Set to true to disable the floating label. Bind this to the
-         * `<paper-input-container>`'s `noLabelFloat` property.
-         */
-        noLabelFloat: {type: Boolean, value: false, reflectToAttribute: true},
-
-        /**
-         * Set to true to always float the label. Bind this to the
-         * `<paper-input-container>`'s `alwaysFloatLabel` property.
-         */
-        alwaysFloatLabel: {type: Boolean, value: false},
 
         /**
          * Set to true to disable animations when opening and closing the
@@ -338,15 +339,17 @@ respectively.
         this._setSelectedItemLabel(value);
       },
 
+      _computeHiddenArrowIcon: function (value) {
+        return !!value
+      },
+
       /**
-       * Compute the vertical offset of the menu based on the value of
-       * `noLabelFloat`.
+       * Compute the vertical offset of the menu
        *
-       * @param {boolean} noLabelFloat True if the label should not float
        * @param {number=} opt_verticalOffset Optional offset from the user
        * above the input, otherwise false.
        */
-      _computeMenuVerticalOffset: function(noLabelFloat, opt_verticalOffset) {
+      _computeMenuVerticalOffset: function(opt_verticalOffset) {
         // Override offset if it's passed from the user.
         if (opt_verticalOffset) {
           return opt_verticalOffset;
@@ -354,9 +357,19 @@ respectively.
 
         // NOTE(cdata): These numbers are somewhat magical because they are
         // derived from the metrics of elements internal to `paper-input`'s
-        // template. The metrics will change depending on whether or not the
-        // input has a floating label.
-        return noLabelFloat ? -4 : 8;
+        // template.
+        return 8;
+      },
+
+      /** @private */
+      _computeUnderlineClass: function(focused, invalid) {
+        var cls = 'underline';
+        if (invalid) {
+          cls += ' is-invalid';
+        } else if (focused) {
+          cls += ' is-highlighted'
+        }
+        return cls;
       },
 
       /**

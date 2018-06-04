@@ -8,6 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../paper-styles/default-theme.html">
 
 <dom-module id="derbi-dropdown-menu-shared-styles">
@@ -48,13 +49,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         top: 8px;
       }
 
-      paper-ripple {
-        top: 12px;
-        left: 0px;
-        bottom: 8px;
-        right: 0px;
+      .dropdown-trigger {
+        @apply --layout-horizontal;
+        @apply --layout-center;
 
+        @apply --derbi-dropdown-menu-dropdown-trigger;
+      }
+
+      paper-ripple {
         @apply --derbi-dropdown-menu-ripple;
+      }
+
+      label {
+        flex: 1 1 auto;
+        padding: 8px 0;
+
+        @apply --derbi-dropdown-menu-label;
       }
 
       paper-menu-button {
@@ -65,6 +75,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       paper-input {
+        text-align: right;
+        flex: 1 1 auto;
+        --paper-input-container-underline: {
+          display: none;
+        };
+        --paper-input-container-underline-focus: {
+          display: none;
+        };
+
         @apply --derbi-dropdown-menu-input;
       }
 
@@ -72,6 +91,66 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: var(--disabled-text-color);
 
         @apply --derbi-dropdown-menu-icon;
+      }
+
+      iron-icon[hidden] {
+        display: none !important;
+        visibility: hidden;
+      }
+
+      .underline {
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        @apply --derbi-dropdown-menu-underline-container;
+      }
+
+      .focused-line {
+        @apply --layout-fit;
+        border-bottom: 2px solid var(--derbi-dropdown-menu-focus-color, var(--primary-color));
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-transform: scale3d(0,1,1);
+        transform: scale3d(0,1,1);
+        @apply --derbi-dropdown-menu-underline-focus;
+      }
+
+      .underline.is-highlighted .focused-line {
+        -webkit-transform: none;
+        transform: none;
+        -webkit-transition: -webkit-transform 0.25s;
+        transition: transform 0.25s;
+        @apply --paper-transition-easing;
+      }
+
+      .underline.is-invalid .focused-line {
+        border-color: var(--derbi-dropdown-menu-invalid-color, var(--error-color));
+        -webkit-transform: none;
+        transform: none;
+        -webkit-transition: -webkit-transform 0.25s;
+        transition: transform 0.25s;
+        @apply --paper-transition-easing;
+      }
+
+      .unfocused-line {
+        @apply --layout-fit;
+        border-bottom: 1px solid var(--derbi-dropdown-menu-color, var(--secondary-text-color));
+        @apply --derbi-dropdown-menu-underline;
+      }
+
+      :host([disabled]) .unfocused-line {
+        border-bottom: 1px dashed;
+        border-color: var(--derbi-dropdown-menu-color, var(--secondary-text-color));
+        @apply --derbi-dropdown-menu-underline-disabled;
+      }
+
+      :host([disabled]) .focused-line {
+        border-bottom: 1px solid var(--derbi-dropdown-menu-color, var(--secondary-text-color));
+
+        @apply  --derbi-dropdown-menu-underline-disabled-focused;
       }
     </style>
   </template>
